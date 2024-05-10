@@ -9,7 +9,11 @@ compu_facil = {
         "resposta": "a",
         "dica": "Dica: A memória RAM é um armazenamento volátil, o que significa que os dados são perdidos quando o computador é desligado."
     },
+<<<<<<< HEAD
     "Qual dos seguintes não é um tipo comum de software? \n (a) SistFema operacional \n (b) Aplicativo \n (c) Linguagem de programação \n (d) Hardware": {
+=======
+    "Qual dos seguintes não é um tipo comum de software? \n (a) Sistema operacional \n (b) Aplicativo \n (c) Linguagem de programação \n (d) Hardware": {
+>>>>>>> 7f1162027eee54cc15be88532af214d37f084200
         "resposta": "d",
         "dica": "Dica: Hardware se refere aos componentes físicos do computador, enquanto software são os programas que são executados nele."
     },

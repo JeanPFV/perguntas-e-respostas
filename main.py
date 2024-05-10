@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import random
 import threading
 import time
@@ -13,6 +14,40 @@ tempo_de_resposta = 10
 
 
 def mensagem_inicial():
+=======
+import threading
+import time
+import random
+import perguntas_bio
+import perguntas_computador
+
+tempo_de_resposta = 20
+
+def input_with_timeout(prompt, timeout):
+  print(prompt)
+  user_input = [""]  # Lista para armazenar a entrada do usuário
+
+  # Função para receber a entrada do usuário
+  def get_input():
+    user_input[0] = input("Resposta: ")
+
+  # Criando uma thread para receber a entrada do usuário
+  input_thread = threading.Thread(target=get_input)
+  input_thread.start()
+
+  # Aguardando o tempo limite ou até que o usuário forneça uma resposta
+  input_thread.join(timeout)
+
+  # Se o usuário não fornecer uma resposta dentro do tempo limite
+  if user_input[0] is None:
+    print("Tempo esgotado!")
+    return None
+  else:
+    return user_input[0]
+
+# Modo normal, com tempo e sistema de pontuação
+def modo_normal(perguntas):
+>>>>>>> 7f1162027eee54cc15be88532af214d37f084200
 
   resp = input("Deseja começar o jogo? (S/N)\n")
   if resp.lower() == "s":
@@ -22,6 +57,7 @@ def mensagem_inicial():
       print(tempo)
     print("Vamos lá!")
 
+<<<<<<< HEAD
 
 def input_with_timeout(prompt, timeout):
   print(prompt)
@@ -113,10 +149,44 @@ def modo_normal(perguntas):
   print(f"\nFim do jogo! Sua pontuação final é: {pontuacao}\n")
 
 
+=======
+  perguntas = list(perguntas.items())
+  random.shuffle(perguntas)
+  
+  pontuacao = 0
+
+  for pergunta, resposta in perguntas:
+    print(pergunta + "\nSe precisar de uma dica digite: dica")
+    while True:
+      start_time = time.time()  # Marca o início do tempo para esta pergunta
+      palpite = input_with_timeout("Você tem 20 segundos para responder: ", tempo_de_resposta)
+  
+      if palpite == "dica":
+          print(f"{resposta['dica']}\n")
+          pontuacao -= 1
+      else:
+          if palpite == resposta['resposta'].lower():
+              print("\nCorreto!\n")
+              pontuacao += 2
+              break
+          else:
+              print(f"\nIncorreto. A resposta correta é: {resposta['resposta']}.\n")
+              break
+  
+      # Calcular o tempo restante após a dica
+      time_left = tempo_de_resposta - (time.time() - start_time)
+      if time_left <= 0:
+          print("Tempo esgotado!")
+          continue
+
+  print(f"\nFim do jogo! Sua pontuação final é: {pontuacao}\n")
+
+>>>>>>> 7f1162027eee54cc15be88532af214d37f084200
 # Modo Estudo é idêntico ao modo normal, mas não tem a sistema de pontos e temporizador
 def modo_estudo(perguntas):
 
   print("Bem-vindo ao modo de estudo de Jogo")
+<<<<<<< HEAD
   mensagem_inicial()
 
   # Embaralhador de perguntas
@@ -148,10 +218,34 @@ def modo_estudo(perguntas):
           break
         else:
           print("\nResposta inválida. Tente novamente.\n")
+=======
+
+  resp = input("Deseja começar o jogo? (S/N)\n")
+  if resp.lower() == "s":
+    print("Começando o jogo...")
+    for tempo in range(3, 0, -1):
+      time.sleep(1)
+      print(tempo)
+    print("Vamos lá!")
+
+  perguntas = list(perguntas.items())
+  random.shuffle(perguntas)
+  
+  for pergunta, resposta in perguntas:
+
+    print(pergunta)
+    palpite = input("Resposta: ")
+
+    if palpite is not None and palpite.strip().lower() == resposta['resposta'].lower():
+      print("Correto!\n")
+    elif palpite is not None:
+      print(f"Incorreto. A resposta correta é: {resposta['resposta']}.\n")
+>>>>>>> 7f1162027eee54cc15be88532af214d37f084200
 
   print("Fim do jogo!")
 
 
+<<<<<<< HEAD
 # Modo multiplayer é igual ao modo normal em mecânica,
 # mas poder ser jogado por um número de jogadores que o usuário pode selecionar
 def modo_multiplayer(perguntas):
@@ -232,10 +326,63 @@ def modo_multiplayer(perguntas):
   print(f"O Jogador {jogador_ganhador+1} ganhou com {pontos_ganhador} pontos!")
 
   # Mostra a pontuação de todos jogadores
+=======
+def modo_multiplayer(perguntas):
+
+  print("Bem-vindo ao modo multiplayer de Jogo")
+  resp = input("Deseja começar o jogo? (S/N)\n")
+  if resp.lower() == "s":
+    print("Começando o jogo...")
+    for tempo in range(3, 0, -1):
+      time.sleep(1)
+      print(tempo)
+    print("Vamos lá!")
+
+  perguntas = list(perguntas.items())
+  random.shuffle(perguntas)
+  
+  # define um número de players
+  numero_jogadores = int(input("Quantidade de jogadores: >>> "))
+
+  pontos_jogadores = [0] * numero_jogadores
+
+  for i in range(numero_jogadores):
+    print(f"Jogador {i+1}\n")
+
+    for pergunta, resposta in perguntas:
+      print(pergunta + "\nSe precisar de uma dica digite: dica")
+      while True:
+          start_time = time.time()  # Marca o início do tempo para esta pergunta
+          palpite = input_with_timeout(f"Você tem {tempo_de_resposta} segundos para responder: ", tempo_de_resposta)
+
+          if palpite == "dica":
+              print(f"{resposta['dica']}\n")
+              pontos_jogadores[i] -= 1
+          else:
+              if palpite == resposta['resposta'].lower():
+                  print("\nCorreto!\n")
+                  pontos_jogadores[i] += 2
+                  break
+              else:
+                  print(f"\nIncorreto. A resposta correta é: {resposta['resposta']}.\n")
+                  break
+
+          # Calcular o tempo restante após a dica
+          time_left = tempo_de_resposta - (time.time() - start_time)
+          if time_left <= 0:
+              print("Tempo esgotado!")
+              continue
+
+  pontos_ganhador = max(pontos_jogadores)
+  jogador_ganhador = pontos_jogadores.index(pontos_ganhador)
+  print(f"O Jogador {jogador_ganhador+1} ganhou com {pontos_ganhador} pontos!")
+  # Mostra a pontuação dos jogadores
+>>>>>>> 7f1162027eee54cc15be88532af214d37f084200
   for i in range(numero_jogadores):
     print(f"Jogardor {i+1}: {pontos_jogadores[i]}")
 
 
+<<<<<<< HEAD
 # O modo adaptativo se adapta conforme o usuário responde as perguntas,
 # fica mais fácil se errar, e mais difícil se acertar
 def modo_adptativo(matriz, tema, dificuldade):
@@ -375,6 +522,91 @@ def menu():
   print(
       "Você terá 20 segundos para responder as 5 perguntas, cada pergunta vale 2 pontos, você pode pedir dicas, mas perderá 1 ponto a cada dica usada.\n"
   )
+=======
+def modo_adptativo(matriz, tema, dificuldade):
+  print("Bem-vindo ao modo adaptativo de Jogo")
+  
+  resp = input("Deseja começar o jogo? (S/N)\n")
+  if resp.lower() == "s":
+      print("Começando o jogo...")
+      for tempo in range(3, 0, -1):
+          time.sleep(1)
+          print(tempo)
+      print("Vamos lá!")
+  
+  # Pontuação inicial 
+  pontuacao = 0
+  cont = 0
+  
+  while cont != 9:
+  
+      perguntas = matriz[dificuldade][tema]
+      perguntas = list(perguntas.items())
+      random.shuffle(perguntas)
+  
+      for pergunta, resposta in perguntas:
+          print(pergunta + "\nSe precisar de uma dica digite: dica")
+  
+          while True:
+  
+              start_time = time.time()  # Marca o início do tempo para esta pergunta
+              palpite = input_with_timeout(f"Você tem {tempo_de_resposta} segundos para responder: ", tempo_de_resposta)
+  
+              if palpite == "dica":
+                  print(f"{resposta['dica']}\n")
+                  pontuacao -= 1
+  
+              else:
+                  if palpite == resposta['resposta'].lower():
+                      print("\nCorreto!\n")
+                      pontuacao += 2
+                      dificuldade += 1 
+                      if dificuldade > 2:
+                          dificuldade = 2
+  
+                      break
+  
+                  else:
+                      print(f"\nIncorreto. A resposta correta é: {resposta['resposta']}.\n")
+                      dificuldade -= 1 
+                      if dificuldade < 0:
+                          dificuldade = 0
+  
+                      break
+  
+              # Calcular o tempo restante após a dica
+              time_left = tempo_de_resposta - (time.time() - start_time)
+              if time_left <= 0:
+                  print("Tempo esgotado!") 
+                  continue
+  
+              # Atualizar a dificuldade somente após o usuário responder à pergunta
+  
+          perguntas.clear()
+          perguntas = matriz[dificuldade][tema]
+          perguntas = list(perguntas.items())
+          random.shuffle(perguntas)
+  
+      cont += 1    
+  print(f"\nFim do jogo! Sua pontuação final é: {pontuacao}")
+
+def menu():
+  print("Bem-vindo ao jogo de Perguntas e Respostas!\n")\
+
+  # Matriz para selecionar tema e dificuldade
+  matriz =[[perguntas_bio.bio_facil, perguntas_computador.compu_facil ],
+          [perguntas_bio.bio_normal, perguntas_computador.compu_normal ],
+          [perguntas_bio.bio_dificil, perguntas_computador.compu_dificil ]]
+
+  # Menu para o usuário escolher o tema e a dificuldade de acordo com o número
+  tema = int(input("Escolha o tema:\n 1. Biologia\n 2. Computadores\n>>> ")) - 1
+  dificuldade = int(input("Escolha a dificuldade:\n 1. Fácil\n 2. Normal\n 3. Difícil\n>>> ")) - 1
+ 
+  perguntas = matriz[dificuldade][tema]
+
+  # Apresenta os modos de jogo para que o usuário escolher de acordo com o número, e descreve como funciona o jogo e a pontuação
+  print("Você terá 20 segundos para responder as 5 perguntas, cada pergunta vale 2 pontos, você pode pedir dicas, mas perderá 1 ponto a cada dica usada.\n")
+>>>>>>> 7f1162027eee54cc15be88532af214d37f084200
   print("Selecione o modo de jogo:\n")
   print("1. Modo Normal (Jogo normal)\n")
   print("2. Modo Estudo (Revise as perguntas e respostas)\n")
@@ -382,10 +614,16 @@ def menu():
   print("4. Adaptativo (A dificuldade se ajusta ao jogador)\n")
   print("0. Sair\n")
 
+<<<<<<< HEAD
   # Usuário escolhe o modo de jogo de acordo com o número
   opcao = input("Digite o número da opção desejada >>>")
 
   # match case para cada modo de jogo
+=======
+  opcao = input("Digite o número da opção desejada >>>")
+
+  # Usuário escolhe o modo de jogo de acordo com o número
+>>>>>>> 7f1162027eee54cc15be88532af214d37f084200
   match opcao:
     case "0":
       print("Saindo do jogo...")
@@ -396,11 +634,16 @@ def menu():
     case "3":
       modo_multiplayer(perguntas)
     case "4":
+<<<<<<< HEAD
       modo_adptativo(matriz, tema, dificuldade)
+=======
+      modo_adptativo(perguntas, tema, dificuldade)
+>>>>>>> 7f1162027eee54cc15be88532af214d37f084200
     case _:
       print("Opção inválida. Tente novamente. \n")
       menu()
 
+<<<<<<< HEAD
 
 # Torna o menu o processo main
 def main():
@@ -409,3 +652,10 @@ def main():
 
 if __name__ == '__main__':
   main()
+=======
+def main():
+  menu()
+
+if __name__ == '__main__':
+  main()
+>>>>>>> 7f1162027eee54cc15be88532af214d37f084200

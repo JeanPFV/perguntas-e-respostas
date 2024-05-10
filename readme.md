@@ -23,12 +23,18 @@ O código Python apresentado produz um jogo de perguntas e respostas com diversa
     * `threading`: Para fazer o temporizador simultaneamente das perguntas
     * `time`: Para controlar o tempo limite das perguntas.
     * `random`: Para selecionar perguntas aleatórias.
+<<<<<<< HEAD
     * `keyboard`: Para finalizar o threading quando for chamado.
+=======
+>>>>>>> 7f1162027eee54cc15be88532af214d37f084200
 * **Módulos:**
     * `perguntas_bio`: Contém as perguntas de Biologia.
     * `perguntas_computador`: Contém as perguntas de Computação.
 * **Funções:**
+<<<<<<< HEAD
     * `mensagem_inicial`: Faz uma mensagem de entrada antes de começar as pergunta e o temporizador
+=======
+>>>>>>> 7f1162027eee54cc15be88532af214d37f084200
     * `input_with_timeout`: Recebe a entrada do usuário com tempo limite.
     * `modo_normal`: Implementa o modo de jogo normal.
     * `modo_estudo`: Implementa o modo de estudo.

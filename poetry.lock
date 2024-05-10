@@ -147,6 +147,7 @@ files = [
 ]
 
 [[package]]
+<<<<<<< HEAD
 name = "keyboard"
 version = "0.13.5"
 description = "Hook and simulate keyboard events on Windows and Linux"
@@ -161,6 +162,8 @@ files = [
 pyobjc = {version = "*", markers = "sys_platform == \"darwin\""}
 
 [[package]]
+=======
+>>>>>>> 7f1162027eee54cc15be88532af214d37f084200
 name = "libretranslatepy"
 version = "2.1.1"
 description = "Python bindings for LibreTranslate API"
@@ -343,6 +346,7 @@ htmlsoup = ["BeautifulSoup4"]
 source = ["Cython (>=3.0.10)"]
 
 [[package]]
+<<<<<<< HEAD
 name = "pyobjc"
 version = "10.2"
 description = "Python<->ObjC Interoperability Module"
@@ -3102,6 +3106,8 @@ pyobjc-core = ">=10.2"
 pyobjc-framework-Cocoa = ">=10.2"
 
 [[package]]
+=======
+>>>>>>> 7f1162027eee54cc15be88532af214d37f084200
 name = "requests"
 version = "2.31.0"
 description = "Python HTTP for Humans."
@@ -3159,4 +3165,8 @@ zstd = ["zstandard (>=0.18.0)"]
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.10.0,<3.12"
+<<<<<<< HEAD
 content-hash = "a89009d5fc1f9fdbefe641d331e0a2e7dda67502afcd2680f32db30b3f59a178"
+=======
+content-hash = "c07abbe14b0340e4a8c5f3e812397407f92032dc760d61dcb277ba20bf6ac73b"
+>>>>>>> 7f1162027eee54cc15be88532af214d37f084200

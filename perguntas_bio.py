@@ -1,10 +1,18 @@
 # ------------------- Modo de jogo fácil -------------------------
 bio_facil = {
+<<<<<<< HEAD
     "Qual o nome do sistema que transporta oxigênio dos pulmões para as células do corpo e remove o dióxido de carbono das células para os pulmões? \n (a) Sistema digestivo \n (b) Sistema cardiovascular \n (c) Sistema respiratório \n (d) Sistema nervoso" : {
         "resposta": "b",
         "dica": "Dica: Esse sistema é composto por brônquios, traqueia e vasos sanguíneos."
     },
     "Qual o nome do reino que inclui todos os seres vivos multicelulares, com organização complexa e células com núcleo definido? \n (a) Monera \n (b) Animalia \n (c) Plantae \n (d) Protista" : {
+=======
+    "Qual o nome do sistema que transporta oxigênio dos pulmões para as células do corpo e remove o dióxido de carbono das células para os pulmões? \n (a) Sistema digestivo \n (b) Sistema cardiovascular \n (c) Sistema respiratório": {
+        "resposta": "b",
+        "dica": "Dica: Esse sistema é composto por brônquios, traqueia e vasos sanguíneos."
+    },
+    "Qual o nome do reino que inclui todos os seres vivos multicelulares, com organização complexa e células com núcleo definido? \n (a) Monera \n (b) Animalia \n (c) Plantae": {
+>>>>>>> 7f1162027eee54cc15be88532af214d37f084200
         "resposta": "b",
         "dica": "Dica: Animais, plantas e fungos fazem parte desse reino."
     },
@@ -12,6 +20,7 @@ bio_facil = {
         "resposta": "DNA",
         "dica": "Dica: Essa molécula é composta por unidades chamadas nucleotídeos."
     },
+<<<<<<< HEAD
     "Qual o nome do gás essencial para a respiração celular dos seres vivos? \n (a) Oxigênio \n (b) Dióxido de carbono \n (c) Vapor d'água \n (d) Hidrogênio" : {
         "resposta": "a",
         "dica": "Dica: Esse gás é encontrado no ar que respiramos."
@@ -25,6 +34,21 @@ bio_facil = {
         "dica": "Dica: Essas células contêm cloroplastos, organelas que capturam a luz solar para realizar a fotossíntese."
     },
     "Qual o nome do tipo de animal que possui corpo articulado, exoesqueleto de quitina e seis patas? \n (a) Aranha \n (b) Carangueijo \n (c) Camarão \n (d) Lacraia": {
+=======
+    "Qual o nome do gás essencial para a respiração celular dos seres vivos? \n (a) Oxigênio \n (b) Dióxido de carbono \n (c) Vapor d'água": {
+        "resposta": "a",
+        "dica": "Dica: Esse gás é encontrado no ar que respiramos."
+    },
+    "Qual das alternativas a seguir NÃO é um animal vertebrado? \n (a) Peixe \n (b) Rã \n (c) Minhoca ": {
+        "resposta": "c",
+        "dica": "Dica: Animais vertebrados possuem coluna vertebral, que é um osso que protege a medula espinhal."
+    },
+    "Qual o nome da célula vegetal responsável pela produção de alimento por meio da fotossíntese? \n (a) Células do floema (b) Células clorofílicas (c) Células meristemáticas": {
+        "resposta": "b",
+        "dica": "Dica: Essas células contêm cloroplastos, organelas que capturam a luz solar para realizar a fotossíntese."
+    },
+    "Qual o nome do tipo de animal que possui corpo articulado, exoesqueleto de quitina e seis patas? \n (a) Aranha \n (b) Carangueijo \n (c) Camarão": {
+>>>>>>> 7f1162027eee54cc15be88532af214d37f084200
         "resposta": "a",
         "dica": "Dica: Incluem formigas, borboletas, besouros e libélulas."
     },
